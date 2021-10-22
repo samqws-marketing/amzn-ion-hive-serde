@@ -23,7 +23,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Download Prebuilt Jar
-      run: curl -LJO https://github.com/amzn/ion-hive-serde/releases/download/v0.3.0/ion-hive-serde-all-0.3.0.jar
+      run: curl -LJO https://github.com/amzn/ion-hive-serde/releases/download/v0.3.0/ion-hive-serde-0.3.0.jar
     - name: WhiteSource Unified Agent Scan
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -44,5 +44,5 @@ jobs:
       run: |
         curl -LJO https://unified-agent.s3.amazonaws.com/wss-unified-agent.jar
         echo Unified Agent downloaded successfully
-        java -jar wss-unified-agent.jar -appPath ./ion-hive-serde-all-0.3.0.jar -d ./
+        java -jar wss-unified-agent.jar -appPath ./ion-hive-serde-0.3.0.jar -d ./
         
