@@ -25,6 +25,7 @@ jobs:
     - name: Download Prebuilt Jar
       run: curl -LJO https://github.com/amzn/ion-hive-serde/releases/download/v0.3.0/ion-hive-serde-0.3.0.jar
     - name: WhiteSource Unified Agent Scan
+      continue-on-error: true
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         WS_APIKEY: ${{secrets.APIKEY}}
